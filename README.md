@@ -23,6 +23,12 @@ This repository mainly provides utility functions and a self-collected dataset c
 - Python 3.10 for running utility scripts.
 - Standard Python libraries: `numpy`, `opencv-python`, etc.
 
+## How to download datasets
+
+run `python download_dataset.py --subset human` to download a dataset that contains data about human.
+Also you can run `python download_dataset.py --subset human/human_000` instead to download a specific dataset of human which is named human_000.
+You can run `python download_dataset.py --repo_id yixuan-huang/Plant3D --subset Plant` to download a pure plants' dataset that only contains data about plants.
+
 ## Usage
 
 1. Preprocess images and organize them in the dataset folder.  

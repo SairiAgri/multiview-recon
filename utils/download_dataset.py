@@ -1,5 +1,3 @@
-# download_hf_subset.py
-
 import argparse
 from huggingface_hub import snapshot_download
 import os
@@ -30,8 +28,8 @@ def download_subset(repo_id: str, subset_folder: str, local_dir: str = "./data")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Download a specific subset from a Hugging Face dataset repo.")
-    parser.add_argument("--repo_id", type=str, required=True,
-                        help="Hugging Face dataset repo id, e.g. 'username/my_dataset'")
+    parser.add_argument("--repo_id", type=str, default="yixuan-huang/Obj3D",
+                        help="Hugging Face dataset repo id (default: 'yixuan-huang/Obj3D')")
     parser.add_argument("--subset", type=str, required=True,
                         help="Subset folder name to download, e.g. 'human'")
     parser.add_argument("--local_dir", type=str, default="./data",
@@ -40,3 +38,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     download_subset(args.repo_id, args.subset, args.local_dir)
+    # Usage example:
+    # python download_dataset.py --subset human
+    # python download_dataset.py --subset human/human_000
+    # python download_dataset.py --repo_id yixuan-huang/Plant3D --subset Plant_000
